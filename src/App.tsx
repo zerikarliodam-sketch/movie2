@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from "firebase/auth";
 import { doc, onSnapshot } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
 import Protected from "./components/Common/Protected";
@@ -91,7 +91,7 @@ function App() {
       unSubAuth();
       unSubDoc();
     };
-  }, [dispatch]);
+  }, [dispatch, setIsSignedIn]);
 
   useEffect(() => {
     window.scrollTo({
